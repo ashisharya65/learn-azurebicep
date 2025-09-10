@@ -17,8 +17,7 @@ Try {
     }
 
     Write-Output "`n The deployment is in progress..."
-    New-AzResourceGroupDeployment @paramsplat | Out-Null
-    Write-Output "The deployment is completed."
+    New-AzResourceGroupDeployment @paramsplat 
 
 }
 Catch {

@@ -50,4 +50,3 @@ output appServiceName string = appServiceName
 output appserviceEndpoint string = appServiceApp.properties.defaultHostName
 output appServicePlanName string = appServicePlanName
 output appServicePlanId string = appServicePlan.id
-
