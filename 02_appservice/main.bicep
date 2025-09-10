@@ -1,6 +1,6 @@
 
 @description('The Azure region for the resources.')
-param location string = 'centralus'
+param location string = resourceGroup().location
 
 @description('The environment type which determines the storage account SKU.')
 @allowed([
@@ -45,5 +45,9 @@ resource appServiceApp 'Microsoft.Web/sites@2024-11-01' = {
 
 output storageAccountName string = storageAccountName
 output storageAccountId string = storageaccount.id
+output storageAccountBlobEndpoint string = storageaccount.properties.primaryEndpoints.blob
 output appServiceName string = appServiceName
+output appserviceEndpoint string = appServiceApp.properties.defaultHostName
+output appServicePlanName string = appServicePlanName
 output appServicePlanId string = appServicePlan.id
+
